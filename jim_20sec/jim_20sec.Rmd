@@ -1,0 +1,37 @@
+---
+name: James T. Durant
+position: "Environmental Health Scientist"
+address: "Agency for Toxic Substances and Disease Registry"
+phone: +1 770.488.0668
+profilepic: ../jim.jpeg
+email: "hzd3@cdc.gov"
+github: YoJimboDurant
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently am the acting branch associate director for science for the western branch of ATSDR's Division of Communinity Health Investigations."
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(rorcid)
+library(glue)
+library(tidyverse)
+mycvdata <- read_rds("../mycvdata.rds")
+```
+
+# Some stuff about me
+
+ * I like ballroom dancing
+
+# Publications
+```{r publications}
+mycvdata$pubsx
+
+```
+
+# Education
+
+```{r education}
+mycvdata$edux
+```
