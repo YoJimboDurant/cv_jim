@@ -147,7 +147,7 @@
 
 		%------------------------------------------------
 
-		{\Large\color{black!80}\cvjobtitle}
+		{\raggedright\large\color{black!80}\cvjobtitle}
 
 		\ifthenelse{\equal{\cvdate}{}}{}{\cvdate}
 		\vspace*{0.4cm}
@@ -202,17 +202,17 @@
 	{%
 		\round{#1}{
 			\ifcase\value{colorCounter}%
-			maingray\or%
 			mainblue\or%
-			maingray\or%
 			mainblue\or%
-			maingray\or%
 			mainblue\or%
-			maingray\or%
 			mainblue\or%
- 			maingray\or%
+			mainblue\or%
+			mainblue\or%
+			mainblue\or%
+			mainblue\or%
+ 			mainblue\or%
 			mainblue\else%
-			maingray\fi%
+			mainblue\fi%
 		}%
 	}%
 	\stepcounter{colorCounter}%
@@ -246,9 +246,9 @@
 }
 
 \newcommand{\twentyitem}[4]{%
-	#1&\parbox[t]{0.83\textwidth}{%
+	#1&\parbox[t]{0.80\textwidth}{%
 		\textbf{#2}%
-		\hfill%
+		\hfill \break%
 		{\footnotesize#3}\\%
 		#4\vspace{\parsep}%
 	}\\
