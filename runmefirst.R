@@ -1,5 +1,6 @@
 library(vitae)
 library(rorcid)
+library(lubridate)
 library(tidyverse)
 orcid_auth()
 
@@ -39,11 +40,18 @@ mycvdata$pubsx <-
   filter(!is.na(cid)) %>%
   filter(journal != "") %>%
   arrange(desc(year)) %>%
+  mutate(title = ifelse(grepl("[.]$", title), title, paste0(title, "."))) %>%
   detailed_entries(
     what = title,
     when = year,
     with = author,
     where = journal
   )
+
+pres <- read.csv(file = "./presies.csv", as.is=TRUE)
+pres <- pres[order(strptime(pres$when, format = "%m/%d/%Y"), decreasing = TRUE),]
+
+
+mycvdata$presx <- detailed_entries(pres, what = what, when = when, where=where, with=who)
 
 write_rds(mycvdata, "./mycvdata.rds")

@@ -21,11 +21,6 @@ library(tidyverse)
 mycvdata <- read_rds("../mycvdata.rds")
 ```
 
-#Employment
-```{r employment}
-mycvdata$empx
-
-```
 
 
 # Publications
@@ -34,13 +29,26 @@ mycvdata$pubsx
 
 ```
 
+# Presentations
+
+```{r presies}
+mycvdata$presx
+```
+
 # Education
 
 ```{r education}
 mycvdata$edux
 ```
 
-# Some stuff about me
+#Employment
+```{r employment}
+mycvdata$empx
 
- * I like ballroom dancing
+```
+
+
+# Hobbies/Interests
+
+ * Hiking, jogging, ameuteur radio, and ballroom dancing
 
