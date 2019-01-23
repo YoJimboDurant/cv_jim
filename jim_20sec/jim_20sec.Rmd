@@ -8,9 +8,13 @@ email: "hzd3@cdc.gov"
 github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently am the acting branch associate director for science for the western branch of ATSDR's Division of Communinity Health Investigations."
+header-includes: \skills{{Industrial Hygiene/5.5},{Statistics/3},{Risk Assessment/3},{R/4},{Toxicology/2},{Air Dispersion Modeling/2}}
 output: vitae::twentyseconds
 ---
+
+
 \raggedright
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
@@ -47,6 +51,7 @@ mycvdata$empx
 
 ```
 
+\endfirstpage
 
 # Hobbies/Interests
 
