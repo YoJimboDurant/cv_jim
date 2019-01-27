@@ -39,9 +39,13 @@ mycvdata$pubsx <-
   scholar::get_publications("E-Zn20UAAAAJ", flush=TRUE) %>% 
   filter(!is.na(cid)) %>%
   filter(journal != "") %>%
-  arrange(desc(year)) %>%
-  mutate(title = ifelse(grepl("[.]$", title), title, paste0(title, "."))) %>%
-  detailed_entries(
+  arrange(desc(year))
+
+mycvdata$pubsx$title <- as.character(mycvdata$pubsx$title)
+
+mycvdata$pubsx$title <- ifelse(grepl("[.]$", mycvdata$pubsx$title), mycvdata$pubsx$title, paste0(mycvdata$pubsx$title, "."))
+
+mycvdata$pubsx <- detailed_entries(mycvdata$pubsx,
     what = title,
     when = year,
     with = author,

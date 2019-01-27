@@ -1,15 +1,14 @@
 ---
 name: James T. Durant
 position: "Environmental Health Scientist"
-address: "Agency for Toxic Substances and Disease Registry"
+address: "840 Ashland Park Way, Lawrenceville GA"
 phone: +1 770.488.0668
-profilepic: ../jim.jpeg
-email: "hzd3@cdc.gov"
+email: jamesdrenda@charter.net
 github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently am the acting branch associate director for science for the western branch of ATSDR's Division of Communinity Health Investigations."
-header-includes: \skills{{Industrial Hygiene/4.5},{Statistics/3},{Risk Assessment/2},{R/3},{Toxicology/2},{Air Dispersion Modeling/2}}
-output: vitae::twentyseconds
+profilepic: ../jim.jpeg
+output: vitae::moderncv
 ---
 
 
@@ -39,18 +38,17 @@ mycvdata$pubsx
 mycvdata$presx
 ```
 
-# Education
-
-```{r education}
-mycvdata$edux
-```
-
-\endfirstpage
-
 #Employment
 ```{r employment}
 mycvdata$empx
 
+```
+
+
+# Education
+
+```{r education}
+mycvdata$edux
 ```
 
 
@@ -59,3 +57,4 @@ mycvdata$empx
 
  * Hiking, jogging, ameuteur radio, and ballroom dancing
 
+\fart
