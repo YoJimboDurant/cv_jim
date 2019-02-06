@@ -1,6 +1,7 @@
 library(vitae)
 library(rorcid)
 library(lubridate)
+library(readxl)
 library(tidyverse)
 orcid_auth()
 
@@ -52,10 +53,14 @@ mycvdata$pubsx <- detailed_entries(mycvdata$pubsx,
     where = journal
   )
 
-pres <- read.csv(file = "./presies.csv", as.is=TRUE)
-pres <- pres[order(strptime(pres$when, format = "%m/%d/%Y"), decreasing = TRUE),]
+
+pres <- read_excel("Data.xlsx", sheet = "Short Presentations")
 
 
-mycvdata$presx <- detailed_entries(pres, what = what, when = when, where=where, with=who)
+
+pres <- pres[order(strptime(pres$Start.Date, format = "%m/%d/%Y"), decreasing = TRUE),]
+pres <- pres[order(pres$Start.Date),]
+pres$where <- paste(pres$Sponsor, pres$Location)
+mycvdata$presx <- detailed_entries(pres, what = Title,  when = Start.Date, where=where, with=Authors)
 
 write_rds(mycvdata, "./mycvdata.rds")

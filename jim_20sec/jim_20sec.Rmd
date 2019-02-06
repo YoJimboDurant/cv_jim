@@ -26,17 +26,10 @@ mycvdata <- read_rds("../mycvdata.rds")
 ```
 
 
+#Employment
+```{r employment}
+mycvdata$empx
 
-# Publications
-```{r publications}
-mycvdata$pubsx
-
-```
-
-# Presentations
-
-```{r presies}
-mycvdata$presx
 ```
 
 # Education
@@ -45,14 +38,19 @@ mycvdata$presx
 mycvdata$edux
 ```
 
-\endfirstpage
-
-#Employment
-```{r employment}
-mycvdata$empx
+# Publications
+```{r publications}
+mycvdata$pubsx
 
 ```
 
+\endfirstpage
+
+# Presentations
+
+```{r presies}
+mycvdata$presx
+```
 
 
 # Hobbies/Interests
