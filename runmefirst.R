@@ -59,7 +59,7 @@ pres <- read_excel("Data.xlsx", sheet = "Short Presentations")
 
 
 pres <- pres[order(strptime(pres$Start.Date, format = "%m/%d/%Y"), decreasing = TRUE),]
-pres <- pres[order(pres$Start.Date),]
+pres <- pres[order(pres$Start.Date, decreasing = TRUE),]
 pres$where <- paste(pres$Sponsor, pres$Location)
 mycvdata$presx <- detailed_entries(pres, what = Title,  when = Start.Date, where=where, with=Authors)
 
