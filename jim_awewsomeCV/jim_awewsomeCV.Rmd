@@ -6,7 +6,7 @@ phone: +1 770.488.0668
 email: "hzd3@cdc.gov"
 github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently am the acting branch associate director for science for the western branch of ATSDR's Division of Communinity Health Investigations."
+aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently an environmental health scientist in the Exposure Investigation Section in ATSDR's Office of Community Health Hazard Evaluation."
 header-includes: \photo[rectangle,edge,left]{../jim1.jpeg}
 output: vitae::awesomecv
 ---
@@ -28,17 +28,43 @@ mycvdata <- read_rds("../mycvdata.rds")
 
 # Publications
 ```{r publications}
-mycvdata$pubsx
+detailed_entries(
+  mycvdata$pubsx,
+  with  = what,
+  where = with,
+  what = glue::glue("{where} , {when}")
+)
 
 ```
 
 # Presentations
 
 ```{r presies}
-mycvdata$presx
+
+detailed_entries(
+  mycvdata$presx,
+  with  = what,
+  where = with,
+  what = glue::glue("{where} , {when}")
+ 
+)
 ```
 
-#Employment
+# US Government Publications
+
+```{r USG}
+detailed_entries(
+mycvdata$govtx,
+  with  = what,
+  where = with,
+   what = glue::glue("{where} , {when}")
+)
+```
+
+
+
+
+# Employment
 ```{r employment}
 mycvdata$empx
 
@@ -55,5 +81,5 @@ mycvdata$edux
 
 # Hobbies/Interests
 
- * Hiking, jogging, ameuteur radio, and ballroom dancing
+ * Hiking, amateur radio (FCC Amateur Extra Radio License KE4MKG)
 

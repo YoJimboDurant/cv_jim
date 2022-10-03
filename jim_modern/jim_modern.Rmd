@@ -8,7 +8,7 @@ github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
 aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently am the acting branch associate director for science for the western branch of ATSDR's Division of Communinity Health Investigations."
 profilepic: ../jim.jpeg
-output: vitae::moderncv
+output: vitae::latexcv
 ---
 
 

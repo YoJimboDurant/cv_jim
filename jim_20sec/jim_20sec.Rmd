@@ -7,7 +7,7 @@ profilepic: ../jim.jpeg
 email: "hzd3@cdc.gov"
 github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently am the acting branch associate director for science for the western branch of ATSDR's Division of Communinity Health Investigations."
+aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently an environmental health scientist in the Exposure Investigation Section in ATSDR's Office of Community Health Hazard Evaluation."
 header-includes: \skills{{Industrial Hygiene/4.5},{Statistics/3},{Risk Assessment/2},{R/3},{Toxicology/2},{Air Dispersion Modeling/2}}
 output: vitae::twentyseconds
 ---
@@ -26,7 +26,8 @@ mycvdata <- read_rds("../mycvdata.rds")
 ```
 
 
-#Employment
+# Employment
+
 ```{r employment}
 mycvdata$empx
 
@@ -38,7 +39,7 @@ mycvdata$empx
 mycvdata$edux
 ```
 
-# Publications
+# Peer-Reviewed Publications
 ```{r publications}
 mycvdata$pubsx
 
@@ -55,5 +56,5 @@ mycvdata$presx
 
 # Hobbies/Interests
 
- * Hiking, jogging, ameuteur radio, and ballroom dancing
+ * Hiking, amateur radio (call KE4MKG)
 
