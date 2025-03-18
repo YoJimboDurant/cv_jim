@@ -60,6 +60,7 @@ mycvdata$pubsx <-
 mycvdata$pubsx$title <- as.character(mycvdata$pubsx$title)
 
 mycvdata$pubsx$title <- ifelse(grepl("[.]$", mycvdata$pubsx$title), mycvdata$pubsx$title, paste0(mycvdata$pubsx$title, "."))
+mycvdata$pubsx$author[2] <- paste(mycvdata$pubsx$author[2], "J Durant ...")  
 
 mycvdata$pubsx <- detailed_entries(mycvdata$pubsx,
     what = title,
@@ -68,7 +69,6 @@ mycvdata$pubsx <- detailed_entries(mycvdata$pubsx,
     where = journal
   ) %>%
   filter(where != "Geol Soc Am Abstr Program")
-
 
 
 
@@ -92,4 +92,25 @@ mycvdata$govtx <- detailed_entries(govt, what = Title,  when = format(Start.Date
 
 
 
+
+govt <- read_excel("Data.xlsx", sheet = "Governmental Publications")
+
+govt <- govt[order(strptime(govt$Start.Date, format = "%m/%d/%Y"), decreasing = TRUE),]
+govt <- govt[order(govt$Start.Date, decreasing = TRUE),]
+govt$where <- paste(govt$Sponsor, govt$Location)
+mycvdata$govtx <- detailed_entries(govt, what = Title,  when = format(Start.Date, "%Y"), where=where, with=Authors)
+
+
+
+coned <- read_excel("Data.xlsx", sheet = "Continuing Eductation")
+coned <- coned[order(strptime(coned$Start.Date, format = "%m/%d/%Y"), decreasing = TRUE),]
+coned <- coned[order(coned$Start.Date, decreasing = TRUE),]
+coned$where <- paste(coned$Sponsor, coned$Location)
+mycvdata$coned <- detailed_entries(coned, what = Title,  when = format(Start.Date, "%Y"), with=Sponsor)
+
+
+
+
 write_rds(mycvdata, "./mycvdata.rds")
+mycvdata
+

@@ -78,6 +78,13 @@ mycvdata$edux
 ```
 
 
+# Continuing Education
+```{r coned}
+mycvdata$coned <- mycvdata$coned |>rename(with = what, what = with)
+
+mycvdata$coned
+```
+
 
 # Hobbies/Interests
 

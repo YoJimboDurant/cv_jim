@@ -1,5 +1,5 @@
 ---
-name: James T. Durant
+name: James T. Durant, MSPH CIH
 position: "Environmental Health Scientist"
 address: "Agency for Toxic Substances and Disease Registry"
 phone: +1 770.488.0668
@@ -32,17 +32,22 @@ mycvdata$pubsx
 
 ```
 
-# Presentations
-
-```{r presies}
-mycvdata$presx
-```
 
 # US Government Publications
 
 ```{r USG}
 mycvdata$govtx
 ```
+
+
+
+
+# Presentations
+
+```{r presies}
+mycvdata$presx
+```
+
 
 # Employment
 ```{r employment}
@@ -57,6 +62,11 @@ mycvdata$empx
 mycvdata$edux
 ```
 
+
+# Continuing Education
+```{r coned}
+mycvdata$coned
+```
 
 
 # Hobbies/Interests
