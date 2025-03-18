@@ -33,7 +33,7 @@ mycvdata$pubsx
 ```
 
 
-# US Government Publications
+# Selected US Government Publications
 
 ```{r USG}
 mycvdata$govtx
@@ -42,7 +42,7 @@ mycvdata$govtx
 
 
 
-# Presentations
+# Selected Presentations
 
 ```{r presies}
 mycvdata$presx
