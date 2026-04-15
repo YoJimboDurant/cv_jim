@@ -109,8 +109,10 @@ coned$where <- paste(coned$Sponsor, coned$Location)
 mycvdata$coned <- detailed_entries(coned, what = Title,  when = format(Start.Date, "%Y"), with=Sponsor)
 
 
-
+certs <- read_excel("Data.xlsx", sheet = "Certifications")
+mycvdata$certs <- detailed_entries(certs, what = Certification, when = Date.start, with = Organization)
 
 write_rds(mycvdata, "./mycvdata.rds")
 mycvdata
+
 

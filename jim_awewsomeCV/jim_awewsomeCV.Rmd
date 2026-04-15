@@ -1,12 +1,12 @@
 ---
 name: James T. Durant
-position: "Environmental Health Scientist"
-address: "Agency for Toxic Substances and Disease Registry"
-phone: +1 770.488.0668
-email: "hzd3@cdc.gov"
+position: "Senior Industrial Hygienist"
+address: "HETI"
+phone: +1 404.632.1529
+email: "jdurant@hetiservices.com"
 github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently an environmental health scientist in the Exposure Investigation Section in ATSDR's Office of Community Health Hazard Evaluation."
+aboutme: "I am an industrial hygienist and environmental scientist specializing in air dispersion modeling, environmental risk assessment, and applied data science. My work focuses on analyzing complex environmental exposures, translating technical findings into actionable insights, and supporting decision-making in regulatory, public health, and insurance contexts."
 header-includes: \photo[rectangle,edge,left]{../jim1.jpeg}
 output: vitae::awesomecv
 ---
@@ -74,14 +74,25 @@ mycvdata$empx
 # Education
 
 ```{r education}
+# mycvdata$edux$what[[1]] <- glue(mycvdata$edux$what[[1]], " Industrial Hygiene")
+# mycvdata$edux$what[[2]] <- glue(mycvdata$edux$what[[2]], " Environmental Health Science")
+cls <- class(mycvdata$edux)
+mycvdata$edux$what[[1]] <- "M.S.P.H. Industrial Hygiene"
+mycvdata$edux$what[[2]] <- "B.S.E.H. Environmental Health Science"
+class(mycvdata$edux) <- cls
 mycvdata$edux
+```
+
+# Certifications
+
+```{r, echo = FALSE}
+mycvdata$certs
 ```
 
 
 # Continuing Education
 ```{r coned}
 mycvdata$coned <- mycvdata$coned |>rename(with = what, what = with)
-
 mycvdata$coned
 ```
 
