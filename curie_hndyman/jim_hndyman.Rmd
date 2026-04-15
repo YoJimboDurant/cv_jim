@@ -1,18 +1,34 @@
 ---
-name: James T. Durant, MSPH CIH
-position: "Environmental Health Scientist"
-address: "Agency for Toxic Substances and Disease Registry"
-phone: +1 770.488.0668
-email: "hzd3@cdc.gov"
+name: James T. Durant
+position: "Senior Industrial Hygienist"
+address: "Lawrenceville, Georgia"
+phone: +1 404.632.1529
+email: "jdurant@hetiservices.com"
 github: YoJimboDurant
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "I am interested in air dispersion modeling, risk assessment, and environmental statistics. I currently an environmental health scientist in the Exposure Investigation Section in ATSDR's Office of Community Health Hazard Evaluation."
-profilepic: ../jim.jpeg
+aboutme: "Senior industrial hygienist with expertise in air dispersion modeling, exposure assessment, environmental risk analysis, and applied data science. Experienced in translating complex technical findings for regulatory, public health, insurance, and litigation contexts."
+profilepic: ./jim.jpeg
 output: vitae::hyndman
+header-includes:
+  - |
+    \makeatletter
+
+    \renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-1.6ex \@plus -.5ex \@minus -.2ex}%
+      {1.0ex \@plus .2ex}%
+      {\normalfont\LARGE\bfseries}}
+
+    \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+      {-1.2ex \@plus -.5ex \@minus -.2ex}%
+      {0.8ex \@plus .2ex}%
+      {\normalfont\large\bfseries}}
+
+    \makeatother
+
+    \setlength{\parskip}{0.45em}
 ---
 
 
-\raggedright
 
 
 ```{r setup, include=FALSE}
@@ -33,7 +49,7 @@ mycvdata$pubsx
 ```
 
 
-# Selected US Government Publications
+# Government Publications
 
 ```{r USG}
 mycvdata$govtx
@@ -42,7 +58,7 @@ mycvdata$govtx
 
 
 
-# Selected Presentations
+# Presentations
 
 ```{r presies}
 mycvdata$presx
@@ -59,8 +75,21 @@ mycvdata$empx
 # Education
 
 ```{r education}
+# mycvdata$edux$what[[1]] <- glue(mycvdata$edux$what[[1]], " Industrial Hygiene")
+# mycvdata$edux$what[[2]] <- glue(mycvdata$edux$what[[2]], " Environmental Health Science")
+cls <- class(mycvdata$edux)
+mycvdata$edux$what[[1]] <- "M.S.P.H. Industrial Hygiene"
+mycvdata$edux$what[[2]] <- "B.S.E.H. Environmental Health Science"
+class(mycvdata$edux) <- cls
 mycvdata$edux
 ```
+
+# Certifications
+
+```{r, echo = FALSE}
+mycvdata$certs
+```
+
 
 
 # Continuing Education

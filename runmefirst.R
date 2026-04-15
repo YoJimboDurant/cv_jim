@@ -43,7 +43,7 @@ empx <- emp %>%
     what = `employment-summary.role-title`,
     when = glue::glue("{`employment-summary.start-date.year.value`} - {`employment-summary.end-date.year.value`}"),
     with = `employment-summary.organization.name`,
-    where = glue::glue("{`employment-summary.organization.address.city`},{`employment-summary.organization.address.region`}")
+    where = glue::glue("{`employment-summary.organization.address.city`}, {`employment-summary.organization.address.region`}")
   )
 
 
@@ -60,7 +60,13 @@ mycvdata$pubsx <-
 mycvdata$pubsx$title <- as.character(mycvdata$pubsx$title)
 
 mycvdata$pubsx$title <- ifelse(grepl("[.]$", mycvdata$pubsx$title), mycvdata$pubsx$title, paste0(mycvdata$pubsx$title, "."))
-mycvdata$pubsx$author[2] <- paste(mycvdata$pubsx$author[2], "J Durant ...")  
+mycvdata$pubsx$author[2] <- paste(mycvdata$pubsx$author[2], "J. Durant ...")  
+
+mycvdata$pubsx$journal <- mycvdata$pubsx$journal |>
+  stringr::str_replace_all(fixed("Environment international"), "Environment International") |>
+  stringr::str_replace_all(fixed("Environmental health perspectives"), "Environmental Health Perspectives") |>
+  stringr::str_replace_all(fixed("International journal of hygiene and environmental health"), 
+                           "International Journal of Hygiene and Environmental Health")
 
 mycvdata$pubsx <- detailed_entries(mycvdata$pubsx,
     what = title,
@@ -68,7 +74,8 @@ mycvdata$pubsx <- detailed_entries(mycvdata$pubsx,
     with = author,
     where = journal
   ) %>%
-  filter(where != "Geol Soc Am Abstr Program")
+  filter(where != "Geol Soc Am Abstr Program") %>%
+  filter(!grepl("Cerro", what))
 
 
 

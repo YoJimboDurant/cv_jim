@@ -42,7 +42,7 @@
 %----------------------------------------------------------------------------------------
 
 \renewcommand{\bfseries}{\color{gray}} % Make \textbf produce coloured text instead
-\def\endfirstpage{\newpage\newgeometry{left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm}}
+\def\endfirstpage{\clearpage\newgeometry{left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm}}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lfoot{\sf\textcolor[gray]{0.4}{Curriculum Vitae: \@name}}
@@ -88,6 +88,12 @@
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
+\newcommand{\cvpronouns}[1]{\renewcommand{\cvpronouns}{#1}}
+\newcommand{\cvorcid}[1]{\renewcommand{\cvorcid}{#1}}
+\newcommand{\cvscholar}[1]{\renewcommand{\cvscholar}{#1}}
+\newcommand{\cvresearchgate}[1]{\renewcommand{\cvresearchgate}{#1}}
+
+
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
